@@ -87,19 +87,19 @@ async function run() {
     // });
 
     //verify admin
-    const verifyAdmin = async (req, res, next) => {
-      const requester = req?.decoded?.email;
+    // const verifyAdmin = async (req, res, next) => {
+    //   const requester = req?.decoded?.email;
 
-      const requesterAccount = await userCollection.findOne({
-        email: requester,
-      });
+    //   const requesterAccount = await userCollection.findOne({
+    //     email: requester,
+    //   });
 
-      if (requesterAccount.role === "admin") {
-        next();
-      } else {
-        res.status(403).send({ message: "forbidden access" });
-      }
-    };
+    //   if (requesterAccount.role === "admin") {
+    //     next();
+    //   } else {
+    //     res.status(403).send({ message: "forbidden access" });
+    //   }
+    // };
 
     ////Payment Methods
     app.post("/create-payment-intent", async (req, res) => {
